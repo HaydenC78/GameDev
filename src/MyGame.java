@@ -36,12 +36,22 @@ public class MyGame extends ApplicationAdapter {
         // --- AP REVIEW: POLYMORPHISM ---
         // TODO 5: Write a standard or enhanced for-loop to iterate through activeObjects.
         // For each object, call its move() method.
-
+        for(int i = 0; i<5; i++){
+            int y = 100 + (i*60);
+            Enemy enemy = new Enemy(400,y, 50, 50, "assets/fish_blue.png");
+            activeObjects.add(enemy);
+        }
         
         //Note: Anything drawn must be between .begin() and .end()
         batch.begin();
         // TODO 6: Write a loop to iterate through activeObjects and call draw(batch).
-
+        for(GameObject obj : activeObjects){
+            obj.move(deltaTime);
+        }
+        batch.begin();
+        for (GameObject obj : activeObjects) {
+            obj.draw(batch);
+        }
 
         batch.end();
 

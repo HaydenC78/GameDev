@@ -38,11 +38,11 @@ public class GameObject {
     // Example: hitbox.setPosition((int) newX, (int) newY);
     public void setX(double newX){
         this.x = newX;
-        hitbox.setPosition((int) newX, (int) y);
+        hitbox.setPosition((float)this.x, (float)this.y);
     }
     public void setY(double newY){
         this.y = newY;
-        hitbox.setPosition((int) x, (int) newY);
+        hitbox.setPosition((float)this.x, (float)this.y);
     }
 
     /**
